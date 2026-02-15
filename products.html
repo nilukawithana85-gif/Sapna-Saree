@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Collection | Sapna Saree Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .category-chip {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .category-chip.active {
+            background-color: black;
+            color: white;
+        }
+
+        .product-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Navigation (Simplified for subpages) -->
+    <nav class="fixed w-full z-50 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-2 brand-logo-container">
+                    <div class="w-10 h-10 bg-black flex items-center justify-center rounded-full">
+                        <span class="text-white font-bold text-xl">S</span>
+                    </div>
+                    <span class="text-2xl font-bold tracking-tighter text-gray-900">SAPNA <span
+                            class="text-[#D4AF37]">SAREE</span></span>
+                </a>
+
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="font-medium hover:text-[#D4AF37]">Home</a>
+                    <a href="products.html" class="font-medium text-[#D4AF37]">Collections</a>
+                    <a href="about.html" class="font-medium hover:text-[#D4AF37]">Our Story</a>
+                    <a href="contact.html" class="font-medium hover:text-[#D4AF37]">Contact</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 hover:bg-gray-100 rounded-full">
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                    </button>
+                    <button class="p-2 bg-black text-white rounded-full hover:bg-gray-800 transition relative">
+                        <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                        <span id="cart-count"
+                            class="absolute -top-1 -right-1 bg-[#D4AF37] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="pt-32 pb-12 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl font-bold text-gray-900">Premium Collection</h1>
+            <p class="mt-4 text-gray-500 text-lg">Browse through our curated selection of high-end fashion pieces.</p>
+        </div>
+    </div>
+
+    <!-- Filters & Main Section -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex flex-col md:flex-row gap-12">
+            <!-- Sidebar Filters -->
+            <aside class="w-full md:w-64 space-y-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Categories</h3>
+                    <div class="flex flex-col space-y-2">
+                        <button onclick="filterCategory('all')"
+                            class="category-chip text-left px-4 py-2 rounded-xl border border-gray-200 hover:border-black active"
+                            id="cat-all">All Items</button>
+                        <button onclick="filterCategory('saree')"
+                            class="category-chip text-left px-4 py-2 rounded-xl border border-gray-200 hover:border-black"
+                            id="cat-saree">Sarees</button>
+                        <button onclick="filterCategory('shoe')"
+                            class="category-chip text-left px-4 py-2 rounded-xl border border-gray-200 hover:border-black"
+                            id="cat-shoe">Shoes & Heels</button>
+                        <button onclick="filterCategory('dress')"
+                            class="category-chip text-left px-4 py-2 rounded-xl border border-gray-200 hover:border-black"
+                            id="cat-dress">Dresses & Frocks</button>
+                        <button onclick="filterCategory('jacket')"
+                            class="category-chip text-left px-4 py-2 rounded-xl border border-gray-200 hover:border-black"
+                            id="cat-jacket">Jacket Pieces</button>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Price Range</h3>
+                    <input type="range" class="w-full accent-black" min="1000" max="50000" step="1000">
+                    <div class="flex justify-between text-sm text-gray-500 mt-2">
+                        <span>LKR 1,000</span>
+                        <span>LKR 50,000+</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Product Grid -->
+            <div class="flex-1">
+                <div class="flex justify-between items-center mb-8">
+                    <p class="text-gray-500"><span id="product-count">0</span> products found</p>
+                    <select class="bg-transparent border-none font-medium focus:ring-0">
+                        <option>Sort by: Newest</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                    </select>
+                </div>
+
+                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Products will be injected here by JS -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black text-white py-20 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 flex justify-between items-center">
+            <p>&copy; 2024 Sapna Saree Center. All rights reserved.</p>
+            <a href="admin-login.html" class="text-xs hover:text-[#D4AF37] transition">Staff Login</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

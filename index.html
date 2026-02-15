@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapna Saree Center | Elegance Redefined</title>
+    <meta name="description"
+        content="Discover the finest collection of Sarees, Dresses, Heels, and Accessories at Sapna Saree Center. Premium quality, unbeatable prices.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #D4AF37;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-2 brand-logo-container">
+                    <div class="w-10 h-10 bg-black flex items-center justify-center rounded-full">
+                        <span class="text-white font-bold text-xl">S</span>
+                    </div>
+                    <span class="text-2xl font-bold tracking-tighter text-gray-900">SAPNA <span
+                            class="text-[#D4AF37]">SAREE</span></span>
+                </div>
+
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="nav-link font-medium">Home</a>
+                    <a href="products.html" class="nav-link font-medium">Collections</a>
+                    <a href="about.html" class="nav-link font-medium">Our Story</a>
+                    <a href="contact.html" class="nav-link font-medium">Contact</a>
+                    <div class="relative group">
+                        <button
+                            class="flex items-center space-x-1 p-2 bg-black text-white rounded-full hover:bg-gray-800 transition">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span class="px-1 text-sm font-bold">0</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="p-2">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 p-4 space-y-4">
+            <a href="index.html" class="block font-medium">Home</a>
+            <a href="products.html" class="block font-medium">Collections</a>
+            <a href="about.html" class="block font-medium">Our Story</a>
+            <a href="contact.html" class="block font-medium">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?q=80&w=2000&auto=format&fit=crop"
+                alt="Hero Saree" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+            <h1 class="text-6xl md:text-8xl font-bold leading-tight animate-fadeIn">
+                Elegance in <br> <span class="text-[#D4AF37]">Every Thread.</span>
+            </h1>
+            <p class="mt-6 text-xl md:text-2xl max-w-2xl text-gray-200 animate-fadeIn" style="animation-delay: 0.2s">
+                Explore our exclusive collection of premium Sarees, Designer Shoes, and High-Fashion Dresses. Crafted
+                for the modern woman who values tradition.
+            </p>
+            <div class="mt-10 flex space-x-4 animate-fadeIn" style="animation-delay: 0.4s">
+                <a href="products.html"
+                    class="bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-[#D4AF37] hover:text-white transition duration-300 flex items-center space-x-2">
+                    <span>Shop Collection</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+                <a href="#categories"
+                    class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-black transition duration-300">
+                    Explore Categories
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Categories -->
+    <section id="categories" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Premium Categories</h2>
+                <div class="w-24 h-1 bg-[#D4AF37] mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Category 1 -->
+                <a href="products.html?category=saree"
+                    class="group relative overflow-hidden rounded-2xl h-96 card-hover">
+                    <img src="https://images.unsplash.com/photo-1625736333199-b9062b770b8e?q=80&w=800&auto=format&fit=crop"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Sarees">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-2xl font-bold">Designer Sarees</h3>
+                        <p class="text-gray-200 text-sm">Traditional & Modern Silk</p>
+                    </div>
+                </a>
+
+                <!-- Category 2 -->
+                <a href="products.html?category=shoes"
+                    class="group relative overflow-hidden rounded-2xl h-96 card-hover">
+                    <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800&auto=format&fit=crop"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Shoes">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-2xl font-bold">Elegant Shoes</h3>
+                        <p class="text-gray-200 text-sm">Premium Comfort & Style</p>
+                    </div>
+                </a>
+
+                <!-- Category 3 -->
+                <a href="products.html?category=dresses"
+                    class="group relative overflow-hidden rounded-2xl h-96 card-hover">
+                    <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=800&auto=format&fit=crop"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Dresses">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-2xl font-bold">Party Dresses</h3>
+                        <p class="text-gray-200 text-sm">Ready-to-wear Outfits</p>
+                    </div>
+                </a>
+
+                <!-- Category 4 -->
+                <a href="products.html?category=heels"
+                    class="group relative overflow-hidden rounded-2xl h-96 card-hover">
+                    <img src="https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?q=80&w=800&auto=format&fit=crop"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Heels">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-2xl font-bold">Designer Heels</h3>
+                        <p class="text-gray-200 text-sm">Step Up Your Style</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900">Featured Arrivals</h2>
+                    <p class="text-gray-600 mt-2">Discover our most loved items this season</p>
+                </div>
+                <a href="products.html" class="text-[#D4AF37] font-bold flex items-center space-x-2 hover:underline">
+                    <span>View All Products</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product Card (Saree) -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 card-hover border border-gray-100 group">
+                    <div class="relative h-80">
+                        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop"
+                            class="w-full h-full object-cover" alt="Kanchipuram Silk">
+                        <span
+                            class="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">-20%</span>
+                        <button
+                            class="absolute top-4 right-4 p-2 bg-white/80 rounded-full opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i data-lucide="heart" class="w-5 h-5 text-gray-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-1">Kanchipuram Silk Saree</h3>
+                        <div class="flex justify-between items-center mt-4">
+                            <div>
+                                <span class="text-gray-400 line-through text-sm">LKR 25,000</span>
+                                <p class="text-2xl font-bold text-black">LKR 19,500</p>
+                            </div>
+                            <button class="p-4 bg-black text-white rounded-2xl hover:bg-[#D4AF37] transition">
+                                <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card (Heels) -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 card-hover border border-gray-100 group">
+                    <div class="relative h-80">
+                        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800&auto=format&fit=crop"
+                            class="w-full h-full object-cover" alt="Gold Heels">
+                        <button
+                            class="absolute top-4 right-4 p-2 bg-white/80 rounded-full opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i data-lucide="heart" class="w-5 h-5 text-gray-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-1">Golden Stiletto Heels</h3>
+                        <div class="flex justify-between items-center mt-4">
+                            <div>
+                                <span class="text-gray-400 line-through text-sm">LKR 8,500</span>
+                                <p class="text-2xl font-bold text-black">LKR 6,250</p>
+                            </div>
+                            <button class="p-4 bg-black text-white rounded-2xl hover:bg-[#D4AF37] transition">
+                                <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card (Frock) -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 card-hover border border-gray-100 group">
+                    <div class="relative h-80">
+                        <img src="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?q=80&w=800&auto=format&fit=crop"
+                            class="w-full h-full object-cover" alt="Floral Frock">
+                        <button
+                            class="absolute top-4 right-4 p-2 bg-white/80 rounded-full opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i data-lucide="heart" class="w-5 h-5 text-gray-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-1">Floral Designer Frock</h3>
+                        <div class="flex justify-between items-center mt-4">
+                            <div>
+                                <span class="text-gray-400 line-through text-sm">LKR 12,000</span>
+                                <p class="text-2xl font-bold text-black">LKR 9,500</p>
+                            </div>
+                            <button class="p-4 bg-black text-white rounded-2xl hover:bg-[#D4AF37] transition">
+                                <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card (Jacket Piece) -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 card-hover border border-gray-100 group">
+                    <div class="relative h-80">
+                        <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=800&auto=format&fit=crop"
+                            class="w-full h-full object-cover" alt="Embroidery Piece">
+                        <button
+                            class="absolute top-4 right-4 p-2 bg-white/80 rounded-full opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i data-lucide="heart" class="w-5 h-5 text-gray-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-1">Premium Jacket Piece</h3>
+                        <div class="flex justify-between items-center mt-4">
+                            <div>
+                                <span class="text-gray-400 line-through text-sm">LKR 4,500</span>
+                                <p class="text-2xl font-bold text-black">LKR 3,800</p>
+                            </div>
+                            <button class="p-4 bg-black text-white rounded-2xl hover:bg-[#D4AF37] transition">
+                                <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-6 brand-logo-container text-white">
+                        <div class="w-10 h-10 bg-[#D4AF37] flex items-center justify-center rounded-full">
+                            <span class="text-black font-bold text-xl">S</span>
+                        </div>
+                        <span class="text-2xl font-bold tracking-tighter">SAPNA <span
+                                class="text-[#D4AF37]">SAREE</span></span>
+                    </div>
+                    <p class="text-gray-400 max-w-md text-lg leading-relaxed">
+                        Bringing you the finest collection of ethnic wear and fashion accessories. Quality is our
+                        tradition. Visit us today for an unforgettable shopping experience.
+                    </p>
+                    <div class="mt-8 flex space-x-4">
+                        <a href="#"
+                            class="p-3 bg-white/10 rounded-full hover:bg-[#D4AF37] hover:text-black transition duration-300">
+                            <i data-lucide="facebook"></i>
+                        </a>
+                        <a href="#"
+                            class="p-3 bg-white/10 rounded-full hover:bg-[#D4AF37] hover:text-black transition duration-300">
+                            <i data-lucide="instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="p-3 bg-white/10 rounded-full hover:bg-[#D4AF37] hover:text-black transition duration-300">
+                            <i data-lucide="twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="products.html" class="hover:text-white transition">All Products</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Visit Our Store</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start space-x-3">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-[#D4AF37]"></i>
+                            <span id="footer-address">123 Main Street, <br> Galle Road, Colombo, Sri Lanka</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-[#D4AF37]"></i>
+                            <span id="footer-phone">+94 11 234 5678</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-[#D4AF37]"></i>
+                            <span id="footer-email">hello@sapnasaree.lk</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="mt-20 pt-8 border-t border-white/10 text-center text-gray-500 flex justify-between items-center">
+                <p>&copy; 2024 Sapna Saree Center. All rights reserved.</p>
+                <a href="admin-login.html" class="text-xs hover:text-[#D4AF37] transition">Staff Login</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Sticky Navbar background
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white');
+                nav.classList.remove('glass');
+            } else {
+                nav.classList.remove('bg-white');
+                nav.classList.add('glass');
+            }
+        });
+    </script>
+</body>
+
+</html>
